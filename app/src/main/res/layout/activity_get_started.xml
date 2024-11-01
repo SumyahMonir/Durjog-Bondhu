@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GetStarted"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="50dp">
+
+
+    <ImageView
+        android:id="@+id/Logo"
+        android:layout_width="237dp"
+        android:layout_height="369dp"
+        app:srcCompat="@drawable/durgobondhulogo" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/text"
+        android:paddingLeft="10dp"
+        android:paddingRight="15dp"
+        />
+
+    <TextView
+        android:paddingTop="20dp"
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Request Help for rescue and Supplies\nSend rescue or send supplies \nSpread Awareness and Alert people" />
+
+    <Button
+        android:id="@+id/getstarted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        android:text="Get Started"
+        android:backgroundTint="@color/black"/>
+
+
+</LinearLayout>
