@@ -29,11 +29,19 @@ public class OTP extends AppCompatActivity {
         getotp=findViewById(R.id.enterotp);
         btnresend=findViewById(R.id.resend);
         btnsubmit=findViewById(R.id.submitotp);
+        String Name = getIntent().getStringExtra("name");
+        String Number = getIntent().getStringExtra("number");
+        String Email = getIntent().getStringExtra("email");
+
 
         btnsubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent chalo=new Intent(getApplicationContext(),SetPassword.class);
+                chalo.putExtra("name",Name);
+                chalo.putExtra("number",Number);
+                chalo.putExtra("email",Email);
+
                 startActivity(chalo);
             }
         });

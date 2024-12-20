@@ -17,7 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class sign_in extends AppCompatActivity {
     Button btnSignIn,btnLogIn;
-    EditText inputName,inputNumber;
+    EditText inputName,inputNumber,inputEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class sign_in extends AppCompatActivity {
         btnLogIn=findViewById(R.id.login);
         inputNumber=findViewById(R.id.editNumber);
         inputName=findViewById(R.id.editname);
+        inputEmail = findViewById(R.id.editEmail);
 
         btnLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +43,12 @@ public class sign_in extends AppCompatActivity {
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent chalo1=new Intent(getApplicationContext(),OTP.class);
+                chalo1.putExtra("name",inputName.getText().toString());
+                chalo1.putExtra("number",inputNumber.getText().toString());
+                chalo1.putExtra("email",inputEmail.getText().toString());
+
                 startActivity(chalo1);
             }
         });

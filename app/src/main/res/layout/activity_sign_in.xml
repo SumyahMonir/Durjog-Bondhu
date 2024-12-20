@@ -69,14 +69,23 @@
             android:textSize="18sp"/>
 
         <EditText
-        android:id="@+id/editNumber"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="numberSigned"
+            android:id="@+id/editNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberSigned"
             android:hint="- - - - - - - - -"
             />
     </LinearLayout>
+
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="Email"
+        />
 
     <Button
         android:id="@+id/signin"
@@ -93,11 +102,11 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="30dp">
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Already Have an Account? then" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Already Have an Account? then" />
 
         <Button
             android:id="@+id/login"
@@ -109,5 +118,10 @@
             android:textColor="#1951FF"
             android:padding="0dp"/>
     </LinearLayout>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+    </ProgressBar>
 
 </LinearLayout>

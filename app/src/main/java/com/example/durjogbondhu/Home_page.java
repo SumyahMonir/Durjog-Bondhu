@@ -17,11 +17,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 public class Home_page extends AppCompatActivity {
-    Button btnAware,Btnsendasis;
+    Button btnAware,Btnsendasis,btnneedhelp;
     ImageView inews,imap,iadd,ifriends,ime;
-    TextView share1,share2,share3,share4;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,40 +34,13 @@ public class Home_page extends AppCompatActivity {
 
         btnAware= findViewById(R.id.awareness);
         Btnsendasis=findViewById(R.id.sendassis);
+        btnneedhelp=findViewById(R.id.needhelp);
         inews=findViewById(R.id.newsfeed);
         imap=findViewById(R.id.danger);
         iadd=findViewById(R.id.add);
         ifriends=findViewById(R.id.friends);
         ime=findViewById(R.id.myprofile);
-        share1=findViewById(R.id.share1);
-        share2=findViewById(R.id.share2);
-        share3=findViewById(R.id.share3);
-        share4=findViewById(R.id.share4);
 
-        share1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                shareContent();
-            }
-        });
-        share2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                shareContent();
-            }
-        });
-        share3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                shareContent();
-            }
-        });
-        share4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                shareContent();
-            }
-        });
 
         btnAware.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,14 +49,20 @@ public class Home_page extends AppCompatActivity {
                 startActivity(chalo);
             }
         });
+        callFragment(new need_help(),0);
 
         Btnsendasis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent chalo1=new Intent(getApplicationContext(),send_Asistance.class);
-                startActivity(chalo1);
+                callFragment(new Send_Assistance(),1);
             }
         });
+        btnneedhelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                callFragment(new need_help(),1);
+            }
+            });
 
         iadd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,11 +88,16 @@ public class Home_page extends AppCompatActivity {
         });
     }
 
-    private void shareContent() {
-        String shareText = "Check out this amazing content!";
-        Intent shareIntent = new Intent(Intent.ACTION_SEND);
-        shareIntent.setType("text/plain");
-        shareIntent.putExtra(Intent.EXTRA_TEXT, shareText);
-        startActivity(Intent.createChooser(shareIntent, "Share via"));
+
+    public void callFragment (Fragment fragment, int Status){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        if(Status == 0){
+            fragmentTransaction.add(R.id.container,fragment);
+        } else if (Status == 1) {
+            fragmentTransaction.replace(R.id.container,fragment);
+        }
+        fragmentTransaction.commit();
     }
 }
