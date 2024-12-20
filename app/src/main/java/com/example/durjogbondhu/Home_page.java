@@ -4,14 +4,18 @@ import android.bluetooth.BluetoothAdapter;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -21,9 +25,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class Home_page extends AppCompatActivity {
-    Button btnAware,Btnsendasis,btnneedhelp;
-    ImageView inews,imap,iadd,ifriends,ime;
 
 
     @Override
@@ -32,53 +36,37 @@ public class Home_page extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_home_page);
 
-        btnAware= findViewById(R.id.awareness);
-        Btnsendasis=findViewById(R.id.sendassis);
-        btnneedhelp=findViewById(R.id.needhelp);
-        inews=findViewById(R.id.newsfeed);
-        imap=findViewById(R.id.danger);
-        iadd=findViewById(R.id.add);
-        ifriends=findViewById(R.id.friends);
-        ime=findViewById(R.id.myprofile);
+        callFragment(new NewsFeed(), 0);
 
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        btnAware.setOnClickListener(new View.OnClickListener() {
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onClick(View view) {
-                Intent chalo=new Intent(getApplicationContext(),Awareness.class);
-                startActivity(chalo);
-            }
-        });
-        callFragment(new need_help(),0);
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId()==R.id.page_1) {
+                        // Handle the selection of page_1
+                        callFragment(new NewsFeed(), 1);
+                        return true;}
+                else if (item.getItemId()==R.id.page_2){
+                        return true;}
 
-        Btnsendasis.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                callFragment(new Send_Assistance(),1);
-            }
-        });
-        btnneedhelp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                callFragment(new need_help(),1);
-            }
-            });
-
-        iadd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent chalo1=new Intent(getApplicationContext(),add.class);
-                startActivity(chalo1);
-            }
-        });
-        ifriends.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent chalo1=new Intent(getApplicationContext(),Friends.class);
-                startActivity(chalo1);
+                else
+                {return false;
+                }
             }
         });
 
+        bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
+            @Override
+            public void onNavigationItemReselected(@NonNull MenuItem item) {
+                if (item.getItemId()==R.id.page_1) {
+                    // Handle the selection of page_1
+                    callFragment(new NewsFeed(), 1);
+                    }
+                else if (item.getItemId()==R.id.page_2){
+                    }
+            }
+        });
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.homepage), (v, insets) -> {
@@ -94,9 +82,9 @@ public class Home_page extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         if(Status == 0){
-            fragmentTransaction.add(R.id.container,fragment);
+            fragmentTransaction.add(R.id.home_container,fragment);
         } else if (Status == 1) {
-            fragmentTransaction.replace(R.id.container,fragment);
+            fragmentTransaction.replace(R.id.home_container,fragment);
         }
         fragmentTransaction.commit();
     }

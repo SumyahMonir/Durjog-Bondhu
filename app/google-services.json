@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "578361879925",
+    "project_id": "durjog-bondhu",
+    "storage_bucket": "durjog-bondhu.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:578361879925:android:85a42bf58eac09af0eb73c",
+        "android_client_info": {
+          "package_name": "com.example.durjogbondhu"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTd8UX_4cQEwNePSvu8b38FMKFURkDFBs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

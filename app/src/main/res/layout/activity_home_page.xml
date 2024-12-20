@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".Home_page"
     android:layout_margin="10dp"
+    android:layout_marginBottom="0dp"
     android:orientation="vertical"
     android:layout_gravity="center_horizontal">
 
@@ -34,48 +35,13 @@
         android:layout_height="2dp"
         android:backgroundTint="#282828"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp">
-
-        <Button
-            android:id="@+id/needhelp"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            android:text="Need Help"
-            android:textColor="@color/black"
-            android:textSize="10sp" />
-
-        <Button
-            android:id="@+id/awareness"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:backgroundTint="#D7D5D5"
-            android:text="Awareness"
-            android:textColor="@color/black"
-            android:textSize="10sp" />
-
-        <Button
-            android:id="@+id/sendassis"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:backgroundTint="#D7D5D5"
-            android:text="Send Assistance"
-            android:textColor="@color/black"
-            android:textSize="10sp" />
-
-    </LinearLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/container"></FrameLayout>
+        android:id="@+id/home_container"
+        android:layout_weight="1"
+        />
 
 
     <com.google.android.material.divider.MaterialDivider
@@ -83,58 +49,15 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#282828" />
 
-    <LinearLayout
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        >
+        android:layout_height="90dp"
+        app:menu="@menu/bottom_navigation_menu" />
 
-        <ImageView
-            android:id="@+id/newsfeed"
-            android:layout_width="49dp"
-            android:layout_height="35dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="10dp"
-            app:srcCompat="@drawable/newsfeed" />
-
-        <ImageView
-            android:id="@+id/danger"
-            android:layout_width="49dp"
-            android:layout_height="35dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            app:srcCompat="@drawable/danger" />
-
-        <ImageView
-            android:id="@+id/add"
-            android:layout_width="49dp"
-            android:layout_height="35dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/add" />
-
-        <ImageView
-            android:id="@+id/friends"
-            android:layout_width="49dp"
-            android:layout_height="35dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/friends" />
-
-        <ImageView
-            android:id="@+id/myprofile"
-            android:layout_width="49dp"
-            android:layout_height="35dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="20dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/profileuser" />
-
-    </LinearLayout>
-
-
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#282828" />
 
 </LinearLayout>

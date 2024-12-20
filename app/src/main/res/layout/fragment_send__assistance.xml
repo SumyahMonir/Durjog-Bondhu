@@ -252,62 +252,6 @@
 
         </ScrollView>
 
-        <com.google.android.material.divider.MaterialDivider
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#282828" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            >
-
-            <ImageView
-                android:id="@+id/newsfeed"
-                android:layout_width="49dp"
-                android:layout_height="35dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="10dp"
-                app:srcCompat="@drawable/newsfeed" />
-
-            <ImageView
-                android:id="@+id/danger"
-                android:layout_width="49dp"
-                android:layout_height="35dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                app:srcCompat="@drawable/danger" />
-
-            <ImageView
-                android:id="@+id/add"
-                android:layout_width="49dp"
-                android:layout_height="35dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/add" />
-
-            <ImageView
-                android:id="@+id/friends"
-                android:layout_width="49dp"
-                android:layout_height="35dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/friends" />
-
-            <ImageView
-                android:id="@+id/myprofile"
-                android:layout_width="49dp"
-                android:layout_height="35dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="20dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/profileuser" />
-
-        </LinearLayout>
 
     </LinearLayout>
 
