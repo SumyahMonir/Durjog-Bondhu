@@ -69,17 +69,54 @@
                 />
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Picture From :"
+                    android:layout_weight="1"></TextView>
+                <ImageView
+                    android:id="@+id/fromcamera"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/cameraicon"
+                    android:layout_marginLeft="40dp"
+                    />
+                <ImageView
+                    android:id="@+id/fromgalley"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/galleryicon"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:gravity="center"
                 android:background="#E0E0E0"
                 >
-
                 <ImageView
                     android:id="@+id/imageView12"
                     android:layout_width="54dp"
                     android:layout_height="35dp"
                     app:srcCompat="@drawable/add_image"
                     />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:scaleType="fitXY"
+                    android:id="@+id/upimage">
+                </ImageView>
+
             </LinearLayout>
 
             <com.google.android.material.divider.MaterialDivider
