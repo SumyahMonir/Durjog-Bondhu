@@ -55,6 +55,13 @@ public class Home_page extends AppCompatActivity {
                 }
             }
         });
+        imap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent chalo1=new Intent(getApplicationContext(),MapActivity.class);
+                startActivity(chalo1);
+            }
+        });
 
         bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
             @Override
