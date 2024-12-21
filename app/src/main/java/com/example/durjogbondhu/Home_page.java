@@ -57,6 +57,10 @@ public class Home_page extends AppCompatActivity {
                     callFragment(new FriendFragment(), 1);
                     return true;
                 }
+                else if (item.getItemId()==R.id.page_5){
+                    callFragment(new ProfileFragment(), 1);
+                    return true;
+                }
                 else
                 {return false;
                 }
@@ -79,6 +83,9 @@ public class Home_page extends AppCompatActivity {
                 }
                 else if (item.getItemId()==R.id.page_4){
                     callFragment(new FriendFragment(), 1);
+                }
+                else if (item.getItemId()==R.id.page_5){
+                    callFragment(new ProfileFragment(), 1);
                 }
             }
         });

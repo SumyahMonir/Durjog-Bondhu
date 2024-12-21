@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileFragment">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:layout_margin="20dp"
+            android:text="Your Profile"
+            android:textStyle="bold"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pp4"
+            app:shapeAppearanceOverlay="@style/CircularImage" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/viewname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="Your name" />
+            <TextView
+                android:id="@+id/veiwemail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="your email" />
+            <TextView
+                android:id="@+id/viewphone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="your phone"/></LinearLayout>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:layout_marginTop="70dp"
+            android:text="To Edit"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <EditText
+                android:id="@+id/chngname"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:ems="12"
+                android:textSize="14dp"
+                android:inputType="text"
+                android:hint="Enter Updated Name"/>
+            <Button
+                android:id="@+id/updatename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Update"
+                android:textSize="12sp"
+                android:padding="15dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <EditText
+                android:id="@+id/chngphone"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:ems="12"
+                android:textSize="14dp"
+                android:inputType="number"
+                android:hint="Enter Updated Phone Number"
+                android:layout_marginTop="10dp"/>
+            <Button
+                android:id="@+id/updatephone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Update"
+                android:textSize="12sp"
+                android:padding="15dp"
+                android:layout_margin="16dp"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/Delectac"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete Account"
+            android:textSize="15sp"
+            android:padding="15dp"
+            android:layout_margin="16dp"/>
+        <Button
+            android:id="@+id/Logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Log Out"
+            android:textSize="15sp"
+            android:padding="15dp"
+            android:layout_marginBottom="30dp"/>
+
+
+    </LinearLayout>
+
+</ScrollView>
+</FrameLayout>
