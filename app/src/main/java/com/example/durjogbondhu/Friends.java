@@ -58,20 +58,20 @@ public class Friends extends AppCompatActivity {
         ArrayAdapter<String> adapter=new ArrayAdapter<>(getApplicationContext(),android.R.layout.simple_list_item_1,listvalues);
         listitem.setAdapter(adapter);
 
-        inews.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent chalo=new Intent(getApplicationContext(),Home_page.class);
-                startActivity(chalo);
-            }
-        });
-        iadd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent chalo1=new Intent(getApplicationContext(),add.class);
-                startActivity(chalo1);
-            }
-        });
+//        inews.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent chalo=new Intent(getApplicationContext(),Home_page.class);
+//                startActivity(chalo);
+//            }
+//        });
+//        iadd.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent chalo1=new Intent(getApplicationContext(),add.class);
+//                startActivity(chalo1);
+//            }
+//        });
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.friends), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

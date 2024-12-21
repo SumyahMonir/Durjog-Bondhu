@@ -44,17 +44,21 @@ public class Home_page extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId()==R.id.page_1) {
-                        // Handle the selection of page_1
                         callFragment(new NewsFeed(), 1);
                         return true;}
                 else if (item.getItemId()==R.id.page_2){
+                    callFragment(new MapFragment(), 1);
                         return true;}
-
+                else if (item.getItemId()==R.id.page_3){
+                    callFragment(new AddpostFragment(), 1);
+                    return true;
+                }
                 else
                 {return false;
                 }
             }
         });
+
 
         bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
             @Override
@@ -64,7 +68,11 @@ public class Home_page extends AppCompatActivity {
                     callFragment(new NewsFeed(), 1);
                     }
                 else if (item.getItemId()==R.id.page_2){
+                    callFragment(new MapFragment(), 1);
                     }
+                else if (item.getItemId()==R.id.page_3){
+                    callFragment(new AddpostFragment(), 1);
+                }
             }
         });
 
