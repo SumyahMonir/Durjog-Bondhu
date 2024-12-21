@@ -34,33 +34,7 @@
         android:layout_height="2dp"
         android:backgroundTint="#282828"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp">
 
-        <Button
-            android:id="@+id/awareness"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:backgroundTint="#FFF"
-            android:text="Safe"
-            android:textColor="@color/black"
-            android:textSize="10sp" />
-
-        <Button
-            android:id="@+id/sendassis"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:backgroundTint="#D7D5D5"
-            android:text="Not Safe"
-            android:textColor="@color/black"
-            android:textSize="10sp" />
-
-    </LinearLayout>
 
     <Spinner
         android:id="@+id/spin"
